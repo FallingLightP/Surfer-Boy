@@ -6,6 +6,7 @@ public class PlayerStack : MonoBehaviour
 {
     Transform stack;
     List<GameObject> boxes;
+    PlayerMovement player;
     public static PlayerStack myStack;
     
     [SerializeField] float stackLerpSpeed = 15f;
@@ -13,8 +14,8 @@ public class PlayerStack : MonoBehaviour
 
     private void Start() {
         myStack = this;
+        player = GetComponentInParent<PlayerMovement>();
         stack = gameObject.transform.parent;
-        print(stack.gameObject.name);
         boxes = new List<GameObject>();
     }
 
@@ -23,7 +24,7 @@ public class PlayerStack : MonoBehaviour
     }
 
     public void AddBox(GameObject box){
-        box.transform.position = transform.position - Vector3.down * heightOffset;
+        box.transform.position = transform.position;
         transform.position += Vector3.up * heightOffset;
         boxes.Add(box);
     }
@@ -39,8 +40,7 @@ public class PlayerStack : MonoBehaviour
         {
             Transform boxTransform = box.transform;
             int listPosition = boxes.IndexOf(box);
-            //(Mathf.Abs(listPosition - boxes.Count)/boxes.Count)   Tower offset effect, not working ATM. This Value would be multiplied with the stackLerpSpeed variable to create a more unstable looking tower
-            boxTransform.position = Vector3.Lerp(boxTransform.position, transform.position - (Vector3.up * heightOffset * (listPosition + 1)), Time.deltaTime * stackLerpSpeed);
+            boxTransform.position = Vector3.Lerp(boxTransform.position, transform.position - (Vector3.up * heightOffset * (listPosition + 1)), Time.deltaTime * stackLerpSpeed * (Mathf.Abs((float)(listPosition) - (float)boxes.Count) / (float)boxes.Count)); //Fixed the Unstable Lerp Effect
         }
     }
 
@@ -50,6 +50,11 @@ public class PlayerStack : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         transform.position += Vector3.down * heightOffset;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "Curve")
+            player.StartCurve();
     }
 
 }

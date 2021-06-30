@@ -44,9 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
                     Vector3 newPos = new Vector3
                     (
-                        capsule.position.x + touch.deltaPosition.x * speedModifier,
-                        capsule.position.y,
-                        capsule.position.z
+                        capsule.localPosition.x + touch.deltaPosition.x * speedModifier,
+                        capsule.localPosition.y,
+                        capsule.localPosition.z
                     );
 
                     newPos.x = Mathf.Clamp(newPos.x, -5, 5);
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
                     else if(newPos.x < capsule.position.x)
                         RotateEffect(-moveRotationCap);
 
-                    capsule.position = newPos;
+                    capsule.localPosition = newPos;
                 }
 
                 else if(touch.phase == TouchPhase.Ended)
@@ -77,4 +77,28 @@ public class PlayerMovement : MonoBehaviour
     {
         capsule.rotation = Quaternion.Euler(capsule.rotation.eulerAngles.x,capsule.rotation.eulerAngles.y, Mathf.Lerp(0, targetRotation, Time.deltaTime * 4f));
     }
+
+    public void StartCurve()
+    {
+        StartCoroutine(CURVEDMOVEMENT());
+    }
+
+    IEnumerator CURVEDMOVEMENT()
+    {
+        float elapsedTime = 0;
+        float maxTime = 4f;
+        float lerpQuantity = 0;
+        Quaternion newRotation;
+        yield return null;
+        yield return new WaitForSeconds(2.75f);
+        newRotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y + 90, transform.rotation.z);
+        while(elapsedTime < maxTime)
+        {
+            elapsedTime += Time.deltaTime;
+            lerpQuantity = elapsedTime/maxTime;
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, lerpQuantity);
+            yield return null;
+        }
+    }
+
 }
