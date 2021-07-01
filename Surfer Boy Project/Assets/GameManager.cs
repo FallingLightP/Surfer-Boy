@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] tiles;
     public GameObject[] curvedTiles;
 
+    public static GameObject[] levelCreatorTiles;
+
     public static GameObject goal;
     public GameObject goalTemp;
 
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
             goal = goalTemp;
 
         originalModeProgress = PlayerPrefs.GetInt("Progress");
+
+        levelCreatorTiles = tiles;
     }
 
     private void Start() {

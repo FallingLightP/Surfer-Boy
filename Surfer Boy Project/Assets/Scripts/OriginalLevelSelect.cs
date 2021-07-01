@@ -17,6 +17,8 @@ public class OriginalLevelSelect : MonoBehaviour
 
     Vector2 currentButton = new Vector2(-170, -300);
 
+    [SerializeField]RectTransform back;
+
     bool instanced;
 
     private void Start() {
@@ -67,6 +69,8 @@ public class OriginalLevelSelect : MonoBehaviour
 
             delay  += 0.1f;
         }
+
+        back.LeanScale(Vector3.zero, 0.4f).setEase(LeanTweenType.easeInBack).setDelay(delay);
 
         StartCoroutine(DELAYDISABLE());
     }

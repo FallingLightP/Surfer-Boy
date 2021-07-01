@@ -76,9 +76,6 @@ public class PlayerMovement : MonoBehaviour
                     else if(newPos.x > capsule.position.x && effectFactor >= 0.75f)
                         driftRight.Play();
 
-                    print(effectFactor);
-
-
                     capsule.localPosition = newPos;
                 }
 
@@ -98,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateEffect(float targetRotation)
     {
-        capsule.localRotation = Quaternion.Euler(capsule.rotation.eulerAngles.x,capsule.rotation.eulerAngles.y, Mathf.Lerp(capsule.rotation.z, targetRotation, Time.deltaTime * moveRotationLerpSpeed));
+        capsule.localRotation = Quaternion.Euler(capsule.localRotation.eulerAngles.x,capsule.localRotation.eulerAngles.y, Mathf.Lerp(capsule.localRotation.z, targetRotation, Time.deltaTime * moveRotationLerpSpeed));
     }
 
     public void StartCurve()

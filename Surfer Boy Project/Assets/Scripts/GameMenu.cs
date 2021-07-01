@@ -15,7 +15,7 @@ public class GameMenu : MonoBehaviour
         foreach(RectTransform r in subMenus)
             r.localScale = Vector3.zero;
 
-        if(GameManager.currentLevel >= GameManager.gameManager.levelSequences.Length - 1)
+        if(GameManager.currentLevel >= GameManager.gameManager.levelSequences.Length - 1 && GameManager.originalMode)
             nextLevelButton.interactable = false;
 
     }
@@ -57,6 +57,17 @@ public class GameMenu : MonoBehaviour
         
 
         SceneManager.LoadScene(1);
+    }
+
+    public void ReloadLevelBuilder()
+    {
+        StartCoroutine(RELOADBUILDER());
+    }
+
+    IEnumerator RELOADBUILDER()
+    {
+        yield return null;
+        SceneManager.LoadScene(2);
     }
 
 }

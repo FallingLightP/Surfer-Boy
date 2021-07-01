@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GENERATOR.unity
     guid: de64356b20aaa4df1bc3402c6231b0bc
+  - enabled: 1
+    path: Assets/Scenes/LevelBuilder.unity
+    guid: 622bd5eed7002440ca2e7819510286a3
   m_configObjects: {}

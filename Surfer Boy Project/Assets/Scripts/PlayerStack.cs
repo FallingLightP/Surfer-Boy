@@ -12,6 +12,8 @@ public class PlayerStack : MonoBehaviour
     [SerializeField] float stackLerpSpeed = 15f;
     float heightOffset = 1.75f;
 
+    bool backFlip;
+
     private void Start() {
         myStack = this;
         player = GetComponentInParent<PlayerMovement>();
@@ -27,12 +29,19 @@ public class PlayerStack : MonoBehaviour
         box.transform.position = transform.position;
         transform.position += Vector3.up * heightOffset;
         boxes.Add(box);
+        transform.LeanRotateAroundLocal(Vector3.right,180, 0.8f).setEase(LeanTweenType.easeOutExpo);
+        backFlip = true;
     }
 
     public void StackUpdate(GameObject box)
     {
         boxes.RemoveAt(boxes.IndexOf(box));
         StartCoroutine(DECREASEHEIGHT());
+        if(backFlip)
+        {
+            transform.LeanRotateAroundLocal(Vector3.right,-180, 0.8f).setEase(LeanTweenType.easeOutExpo);
+            backFlip = false;
+        }
     }
 
     void MoveStack(){
