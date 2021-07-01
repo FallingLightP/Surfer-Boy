@@ -21,9 +21,12 @@ public class Goal : MonoBehaviour
     IEnumerator BACKTOMENU()
     {
         if(GameManager.originalMode){
-            GameManager.originalModeProgress++;
-            PlayerPrefs.SetInt("Progress", GameManager.originalModeProgress);
-            PlayerPrefs.Save();
+            print("Progress : " + GameManager.originalModeProgress + " -- Current Level : " + GameManager.currentLevel);
+            if(GameManager.originalModeProgress == GameManager.currentLevel){
+                GameManager.originalModeProgress++;
+                PlayerPrefs.SetInt("Progress", GameManager.originalModeProgress);
+                PlayerPrefs.Save();
+            }
         }
         else
             GameManager.originalMode = true;
