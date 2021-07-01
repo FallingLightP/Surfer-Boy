@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     public GameObject[] tiles;
     public GameObject[] curvedTiles;
 
+    //Static reference of the tiles for use in the Level Builder
     public static GameObject[] levelCreatorTiles;
 
     public static GameObject goal;
     public GameObject goalTemp;
 
+    //SceneCheck overhaul
     public static bool initialized = false;
     public static int currentLevel = 0;
     public static bool originalMode = true;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]Canvas canvas;
 
+
     private void Awake() {
         gameManager = this;
         if(goalTemp != null && goal == null)
@@ -41,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
+        //Scene Check, these functions only pass in the Generator Scene
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             if(originalMode)
@@ -52,17 +56,21 @@ public class GameManager : MonoBehaviour
             initialized = true;
     }
 
+    //If Original Mode is true, load pre generated Level
     public void OriginalMode()
     {
         originalMode = true;
     }
 
+    //Else, Generate Random Level, doesn't affect original mode progress
     public void RandomMode()
     {
         originalMode = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //If there is the scriptable object already has level data, load level
+    //Else generate level data in that scriptable objecy
     public void Generate()
     {
         if(levelSequences[currentLevel].mySequence.Count == 0)
@@ -117,7 +125,6 @@ public class GameManager : MonoBehaviour
                     tileOffset = new Vector3(50,0,0);
                     tilePosition += curveOffset;
                     tileRotation = curveRotation;
-                    print(tilePosition);
             }
             else
             {
@@ -216,6 +223,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Used to load hand made levels, does not load generated level data
     IEnumerator LOADLEVEL()
     {
         Vector3 tilePosition = Vector3.zero;
@@ -275,6 +283,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Used to load pre-generated level data
     IEnumerator LOADSEQUENCE()
     {
         LevelSequence thisLevelSequence = levelSequences[currentLevel];

@@ -36,6 +36,17 @@ public class Goal : MonoBehaviour
             }
         }
 
+        if(!GameManager.originalMode && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            int i = PlayerStack.myStack.boxes.Count;
+
+            if(i>PlayerPrefs.GetInt("Hi Score"))
+            {
+                PlayerPrefs.SetInt("Hi Score", i);
+                PlayerPrefs.Save();
+            }
+        }
+
         GameManager.initialized = false;
         yield return null;
         //SceneManager.LoadScene(0);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStack : MonoBehaviour
 {
     Transform stack;
-    List<GameObject> boxes;
+    [HideInInspector]public List<GameObject> boxes;
     PlayerMovement player;
     public static PlayerStack myStack;
     
@@ -25,6 +25,7 @@ public class PlayerStack : MonoBehaviour
         MoveStack();
     }
 
+    //Add box to stack
     public void AddBox(GameObject box){
         box.transform.position = transform.position;
         transform.position += Vector3.up * heightOffset;
@@ -33,6 +34,7 @@ public class PlayerStack : MonoBehaviour
         backFlip = true;
     }
 
+    //Removes box from stack
     public void StackUpdate(GameObject box)
     {
         boxes.RemoveAt(boxes.IndexOf(box));
@@ -53,6 +55,8 @@ public class PlayerStack : MonoBehaviour
         }
     }
 
+
+    //Brings the player down, is here so the player doesnt hit the wall on the way down
     IEnumerator DECREASEHEIGHT()
     {
         yield return null;

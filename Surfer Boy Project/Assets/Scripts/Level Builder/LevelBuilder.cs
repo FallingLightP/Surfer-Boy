@@ -32,6 +32,7 @@ public class LevelBuilder : MonoBehaviour
         myButtons = GetComponentsInChildren<Button>();
     }
 
+    //Function invoked on button press, buttons lock themselves out if maximum tile count is matched, that is done locally in said button
     public void AddNewPart(int i)
     {
         if(!capped)
@@ -46,6 +47,7 @@ public class LevelBuilder : MonoBehaviour
         }
     }
 
+    //Instantiates Goal Tile and starts level, is locked while the minimum requirement of tiles is not met
     public void DoneCreating()
     {
         Instantiate(goal, tilePosition, Quaternion.identity);
