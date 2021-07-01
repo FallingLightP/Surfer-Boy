@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
-        if(initialized)
+        if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             if(originalMode)
                 Generate();
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
         LevelSequence saveInstance = levelSequences[currentLevel];
 
         int maxTiles = Random.Range(4,8);
-        int tilesUntilCurve = Random.Range(0,4);
+        int tilesUntilCurve = Random.Range(1,4);
 
         
         Vector3 tilePosition = Vector3.zero;

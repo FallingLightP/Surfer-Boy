@@ -7,6 +7,8 @@ public class Goal : MonoBehaviour
 {
     ParticleSystem part;
 
+    PlayerGameFuntion playerFunction;
+
     private void Start() {
         part = GetComponentInChildren<ParticleSystem>();
     }
@@ -15,6 +17,7 @@ public class Goal : MonoBehaviour
         if(other.tag == "Player")
         {
             StartCoroutine(BACKTOMENU());
+            playerFunction = other.GetComponentInChildren<PlayerGameFuntion>();
         }
     }
 
@@ -28,11 +31,11 @@ public class Goal : MonoBehaviour
                 PlayerPrefs.Save();
             }
         }
-        else
-            GameManager.originalMode = true;
 
         GameManager.initialized = false;
         yield return null;
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
+        playerFunction.Win();
+
     }
 }

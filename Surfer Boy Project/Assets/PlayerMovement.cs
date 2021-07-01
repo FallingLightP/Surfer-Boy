@@ -12,9 +12,13 @@ public class PlayerMovement : MonoBehaviour
     private float speedModifier;
     bool startRunning = false;
     [SerializeField]float runSpeed = 5f;
+    public bool movementOverhaul = false;
 
     [Header("Effects")]
     [SerializeField]float moveRotationCap = 45f;
+    [SerializeField]float moveRotationLerpSpeed = 4f;
+    [SerializeField]ParticleSystem driftLeft;
+    [SerializeField]ParticleSystem driftRight;
 
     private void Start()
     {
@@ -23,10 +27,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        TouchMovement();
+        if(!movementOverhaul)
+        {
+            TouchMovement();
 
-        if(startRunning)
-            GoForward();
+            if(startRunning)
+                GoForward();
+        }
     }
 
     void TouchMovement()
@@ -51,10 +58,26 @@ public class PlayerMovement : MonoBehaviour
 
                     newPos.x = Mathf.Clamp(newPos.x, -5, 5);
 
-                    if(newPos.x > capsule.position.x)
+                    //Player Effects
+
+                    float effectFactor = Mathf.Abs(capsule.localPosition.x - newPos.x);
+
+                    if(newPos.x > capsule.position.x && effectFactor > 0.1f){
                         RotateEffect(moveRotationCap);
-                    else if(newPos.x < capsule.position.x)
+                    }
+                    else if(newPos.x < capsule.position.x && effectFactor > 0.1f){
                         RotateEffect(-moveRotationCap);
+                    }
+                    else
+                        RotateEffect(0);
+
+                    if(newPos.x < capsule.position.x && effectFactor >= 0.75f)
+                        driftLeft.Play();
+                    else if(newPos.x > capsule.position.x && effectFactor >= 0.75f)
+                        driftRight.Play();
+
+                    print(effectFactor);
+
 
                     capsule.localPosition = newPos;
                 }
@@ -75,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateEffect(float targetRotation)
     {
-        capsule.rotation = Quaternion.Euler(capsule.rotation.eulerAngles.x,capsule.rotation.eulerAngles.y, Mathf.Lerp(0, targetRotation, Time.deltaTime * 4f));
+        capsule.localRotation = Quaternion.Euler(capsule.rotation.eulerAngles.x,capsule.rotation.eulerAngles.y, Mathf.Lerp(capsule.rotation.z, targetRotation, Time.deltaTime * moveRotationLerpSpeed));
     }
 
     public void StartCurve()
@@ -90,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         float lerpQuantity = 0;
         Quaternion newRotation;
         yield return null;
-        yield return new WaitForSeconds(2.75f);
+        yield return new WaitForSeconds(2.77f);
         newRotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y + 90, transform.rotation.z);
         while(elapsedTime < maxTime)
         {

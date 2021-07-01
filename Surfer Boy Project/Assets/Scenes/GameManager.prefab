@@ -64,6 +64,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f98bc4005d66549d7aa88f1de8c55910, type: 2}
   - {fileID: 11400000, guid: 14f9167068bc74de99f0431cd43bcd81, type: 2}
   - {fileID: 11400000, guid: 965abe5f5b44342e59ff595724e3d44a, type: 2}
-  - {fileID: 11400000, guid: d3faee2f23b6e4562b3fe4fdb422f9cd, type: 2}
-  - {fileID: 11400000, guid: d031771c1dbb541f5b68624aa90217b0, type: 2}
   canvas: {fileID: 0}
