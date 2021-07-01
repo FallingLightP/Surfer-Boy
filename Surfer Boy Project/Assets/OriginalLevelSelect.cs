@@ -17,13 +17,15 @@ public class OriginalLevelSelect : MonoBehaviour
 
     Vector2 currentButton = new Vector2(-170, -300);
 
+    bool instanced;
+
     private void Start() {
         levelIcons = new List<GameObject>();
         presetButton = transform.GetChild(0).gameObject;
         int i = 0;
         
-        if(GameManager.gameManager.premadeLevels.Length > 1)
-        foreach(CompleteLevel c in GameManager.gameManager.premadeLevels)
+        if(GameManager.gameManager.levelSequences.Length > 1 && !instanced)
+        foreach(LevelSequence c in GameManager.gameManager.levelSequences)
         {
             if(i == 0)
                 print("no");
@@ -34,6 +36,7 @@ public class OriginalLevelSelect : MonoBehaviour
                 currentButton += offset;
                 newButton.GetComponent<RectTransform>().anchoredPosition = currentButton;
                 newButton.GetComponentInChildren<TextMeshProUGUI>().text = (i + 1).ToString();
+                newButton.GetComponent<OriginalLevelButton>().myLevel = i;
             }
             else
             {
@@ -43,8 +46,11 @@ public class OriginalLevelSelect : MonoBehaviour
                 currentButton += offset;
                 newButton.GetComponent<RectTransform>().anchoredPosition = currentButton;
                 newButton.GetComponentInChildren<TextMeshProUGUI>().text = (i + 1).ToString();
+                newButton.GetComponent<OriginalLevelButton>().myLevel = i;
             }
             i++;
+            if(i == GameManager.gameManager.levelSequences.Length)
+                instanced = true;
         }
     }
 }

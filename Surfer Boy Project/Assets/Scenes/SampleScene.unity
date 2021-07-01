@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 465985951}
   - component: {fileID: 465985954}
   - component: {fileID: 465985955}
+  - component: {fileID: 465985956}
   m_Layer: 0
   m_Name: 'Capsule '
   m_TagString: Player
@@ -311,6 +312,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stackLerpSpeed: 15
+--- !u!114 &465985956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465985949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cff67684ceb4ff9a4014a9c8bc71c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

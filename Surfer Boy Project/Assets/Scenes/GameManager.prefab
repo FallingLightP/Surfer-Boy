@@ -46,14 +46,24 @@ MonoBehaviour:
   tiles:
   - {fileID: 3349317729008577476, guid: d97c891c72a364132bfd5a2e17aaabdb, type: 3}
   - {fileID: 7000732266507484721, guid: 1b31ea034efa548e6b6e8e5aafac5ee8, type: 3}
+  - {fileID: 8401125943158647807, guid: f224f4f8b104c429d94571b63948e5df, type: 3}
+  - {fileID: 6893876405695460611, guid: 8de4dd3c2b4e34d81811b3026b3cd321, type: 3}
+  - {fileID: 4216099788077671306, guid: b4c2fc2d9867240fd843036eb6141f9a, type: 3}
   curvedTiles:
   - {fileID: 1843440182923319386, guid: 94f059721f52e4fa9bc9983c8fb0c699, type: 3}
   goalTemp: {fileID: 4577945300835170392, guid: 5ce2b758d503345a6a9b9a629c8b78b5, type: 3}
-  level:
-  - {fileID: 11400000, guid: e827794b87cde4f87b5968d487a27a3c, type: 2}
   premadeLevels:
   - {fileID: 11400000, guid: a4814ab530c91448980efb57ee4ecf6f, type: 2}
   - {fileID: 11400000, guid: a4814ab530c91448980efb57ee4ecf6f, type: 2}
   levelSequences:
   - {fileID: 11400000, guid: f3dbd1185ae98412c96d8d47c93f0347, type: 2}
+  - {fileID: 11400000, guid: 6a7ddcaeba215413ebf885c104e1cc6a, type: 2}
+  - {fileID: 11400000, guid: c16a83e0e54304a43a4075251ffc2b0f, type: 2}
+  - {fileID: 11400000, guid: d1b3a7b274db3487786fbde1e0bfce0d, type: 2}
+  - {fileID: 11400000, guid: ec0f125903cc244da8915bcdd9e88734, type: 2}
+  - {fileID: 11400000, guid: f98bc4005d66549d7aa88f1de8c55910, type: 2}
+  - {fileID: 11400000, guid: 14f9167068bc74de99f0431cd43bcd81, type: 2}
+  - {fileID: 11400000, guid: 965abe5f5b44342e59ff595724e3d44a, type: 2}
+  - {fileID: 11400000, guid: d3faee2f23b6e4562b3fe4fdb422f9cd, type: 2}
+  - {fileID: 11400000, guid: d031771c1dbb541f5b68624aa90217b0, type: 2}
   canvas: {fileID: 0}

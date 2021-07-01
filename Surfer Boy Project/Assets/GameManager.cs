@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     public CompleteLevel[] premadeLevels;
     public LevelSequence[] levelSequences;
 
+    public static int originalModeProgress = 0;
+
     Vector3 playerStart;
     Vector3 playerStartRotation = Vector3.zero;
 
@@ -30,27 +33,113 @@ public class GameManager : MonoBehaviour
         if(goalTemp != null && goal == null)
             goal = goalTemp;
 
-        print("yo");
+        originalModeProgress = PlayerPrefs.GetInt("Progress");
     }
 
     private void Start() {
         if(initialized)
         {
             if(originalMode)
-                PreMade();
+                Generate();
+            else
+                StartCoroutine(RANDOMLEVEL());
         }
         else
             initialized = true;
     }
 
+    public void OriginalMode()
+    {
+        originalMode = true;
+    }
+
+    public void RandomMode()
+    {
+        originalMode = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void Generate()
     {
-        StartCoroutine(LOADSEQUENCE());
+        if(levelSequences[currentLevel].mySequence.Count == 0)
+            StartCoroutine(GENERATELEVEL());
+        else
+            StartCoroutine(LOADSEQUENCE());
+    }
+
+    public void RandomLevel()
+    {
+        originalMode = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PreMade()
     {
         StartCoroutine(LOADLEVEL());
+    }
+
+    IEnumerator RANDOMLEVEL()
+    {
+        int maxTiles = Random.Range(4,8);
+        int tilesUntilCurve = Random.Range(2,4);
+
+        
+        Vector3 tilePosition = Vector3.zero;
+        Quaternion tileRotation = Quaternion.Euler(0,0,0);
+
+        Vector3 tileOffset = new Vector3(0,0,50);
+        Vector3 curveOffset = new Vector3(15,0,15);
+        Quaternion curveRotation = Quaternion.Euler(0,90,0);
+
+        //int maxTiles = level[currentLevel].totalTiles;
+        int currentTile = 0;
+
+        
+
+        GameObject completeLevel = Instantiate(new GameObject());
+        completeLevel.transform.position = Vector3.zero;
+        while(maxTiles > currentTile)
+        {
+            if(currentTile == tilesUntilCurve)
+            {
+                
+                Instantiate
+                (
+                    curvedTiles[Random.Range(0, curvedTiles.Length)],
+                    tilePosition,
+                    tileRotation,
+                    completeLevel.transform
+                );
+                    tileOffset = new Vector3(50,0,0);
+                    tilePosition += curveOffset;
+                    tileRotation = curveRotation;
+                    print(tilePosition);
+            }
+            else
+            {
+                int tileIndex = Random.Range(0, tiles.Length);
+                Instantiate(
+                    tiles[tileIndex],
+                    tilePosition,
+                    tileRotation,
+                    completeLevel.transform
+                );
+                tilePosition += tileOffset;
+            }
+            currentTile++;
+            yield return null;
+            if(currentTile == maxTiles)
+            {
+                Instantiate
+                (
+                    goal,
+                    tilePosition,
+                    tileRotation,
+                    completeLevel.transform
+                    //CHANGE THE COMPLETE LEVEL VARIABLE NAME
+                );
+            }
+        }
     }
 
     IEnumerator GENERATELEVEL()

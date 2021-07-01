@@ -47,7 +47,7 @@ public class PlayerStack : MonoBehaviour
     IEnumerator DECREASEHEIGHT()
     {
         yield return null;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.35f);
 
         transform.position += Vector3.down * heightOffset;
     }
