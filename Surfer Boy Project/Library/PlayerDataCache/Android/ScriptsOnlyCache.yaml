@@ -2,8 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Box
+    - ButtonPop
     - CompleteLevel
-    - Curve
     - DriftParticle
     - GameManager
     - GameMenu
@@ -35,7 +35,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/GENERATOR.unity:
     - Class: 1
@@ -114,6 +113,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4054}
     - Class: 114
       Script: {instanceID: 4404}
+    - Class: 114
+      Script: {instanceID: 34684}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -186,8 +187,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2034}
     - Class: 114
-      Script: {instanceID: 2040}
-    - Class: 114
       Script: {instanceID: 2330}
     - Class: 114
       Script: {instanceID: 2438}
@@ -215,6 +214,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4076}
     - Class: 114
       Script: {instanceID: 4404}
+    - Class: 114
+      Script: {instanceID: 34684}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -338,12 +339,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Curve
   - hash:
       serializedVersion: 2
       Hash: a5580c82e9bc41ec73f9916dd3d707fc
@@ -766,7 +761,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 02a6da23cfc19cddd4b68644ec3d658d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Goal
@@ -956,8 +951,14 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Following
+  - hash:
+      serializedVersion: 2
+      Hash: 20c9a74d659b6895cfdb5f4624ba8daa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonPop
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/GENERATOR.unity
-  playerPath: /Users/me/Desktop/Test_BUILD_02.apk
+  playerPath: /Users/me/CHALLENGE/Test_BUILD_03.apk

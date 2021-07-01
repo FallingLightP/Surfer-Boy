@@ -180,7 +180,6 @@ public class GameManager : MonoBehaviour
                     tileOffset = new Vector3(50,0,0);
                     tilePosition += curveOffset;
                     tileRotation = curveRotation;
-                    print(tilePosition);
 
                 saveInstance.mySequence.Add(0);
             }
