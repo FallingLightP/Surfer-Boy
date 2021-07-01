@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fabacad03f21740ab98cdb4d25f16f40, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  mySequence: 
+  mySequence: 0300000005000000040000000000000001000000

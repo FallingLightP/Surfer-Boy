@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         float lerpQuantity = 0;
         Quaternion newRotation;
         yield return null;
-        yield return new WaitForSeconds(2.8f);
+        yield return new WaitForSeconds(2.9f);
         newRotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y + 90, transform.rotation.z);
         while(elapsedTime < maxTime)
         {

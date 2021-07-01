@@ -8,6 +8,9 @@ ScriptsOnlyBuild:
     - GameManager
     - GameMenu
     - Goal
+    - LevelBuilder
+    - LevelBuilderButton
+    - LevelBuilderDoneButton
     - LevelSequence
     - OriginalLevelButton
     - OriginalLevelSelect
@@ -16,6 +19,7 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - PlayerStack
     - StackTrail
+    - StartLevelBuilder
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -74,9 +78,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1544}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1664}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1772}
     - Class: 114
       Script: {instanceID: 1918}
     - Class: 114
@@ -100,21 +104,130 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 3156}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3630}
+      Script: {instanceID: 3638}
     - Class: 114
-      Script: {instanceID: 3766}
+      Script: {instanceID: 3774}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 3970}
+      Script: {instanceID: 3978}
     - Class: 114
-      Script: {instanceID: 4054}
+      Script: {instanceID: 4062}
     - Class: 114
-      Script: {instanceID: 4404}
+      Script: {instanceID: 4412}
     - Class: 114
-      Script: {instanceID: 34684}
+      Script: {instanceID: 16954}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/LevelBuilder.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1544}
+    - Class: 114
+      Script: {instanceID: 1664}
+    - Class: 114
+      Script: {instanceID: 1772}
+    - Class: 114
+      Script: {instanceID: 1918}
+    - Class: 114
+      Script: {instanceID: 2028}
+    - Class: 114
+      Script: {instanceID: 2174}
+    - Class: 114
+      Script: {instanceID: 2226}
+    - Class: 114
+      Script: {instanceID: 2330}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2476}
+    - Class: 114
+      Script: {instanceID: 2516}
+    - Class: 114
+      Script: {instanceID: 2580}
+    - Class: 114
+      Script: {instanceID: 2768}
+    - Class: 114
+      Script: {instanceID: 2864}
+    - Class: 114
+      Script: {instanceID: 2902}
+    - Class: 114
+      Script: {instanceID: 3160}
+    - Class: 114
+      Script: {instanceID: 3162}
+    - Class: 114
+      Script: {instanceID: 3490}
+    - Class: 114
+      Script: {instanceID: 3638}
+    - Class: 114
+      Script: {instanceID: 3774}
+    - Class: 114
+      Script: {instanceID: 3940}
+    - Class: 114
+      Script: {instanceID: 3978}
+    - Class: 114
+      Script: {instanceID: 4062}
+    - Class: 114
+      Script: {instanceID: 4412}
+    - Class: 114
+      Script: {instanceID: 16954}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -179,9 +292,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1574}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1664}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1772}
     - Class: 114
       Script: {instanceID: 1918}
     - Class: 114
@@ -201,21 +314,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 3630}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3766}
+      Script: {instanceID: 3638}
     - Class: 114
-      Script: {instanceID: 3826}
+      Script: {instanceID: 3774}
     - Class: 114
-      Script: {instanceID: 3962}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 4054}
+      Script: {instanceID: 3970}
     - Class: 114
-      Script: {instanceID: 4076}
+      Script: {instanceID: 4062}
     - Class: 114
-      Script: {instanceID: 4404}
+      Script: {instanceID: 4084}
     - Class: 114
-      Script: {instanceID: 34684}
+      Script: {instanceID: 4412}
+    - Class: 114
+      Script: {instanceID: 16954}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -309,6 +424,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: 20c9a74d659b6895cfdb5f4624ba8daa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonPop
   - hash:
       serializedVersion: 2
       Hash: 6bc76e17f0d5e93f3eea7f5a2fe227f3
@@ -593,6 +714,12 @@ ScriptsOnlyBuild:
     className: GeneralAdvancedTechniques
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelBuilderDoneButton
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -623,6 +750,12 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartLevelBuilder
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -651,6 +784,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StackTrail
+  - hash:
+      serializedVersion: 2
+      Hash: 8874fe803d3d832ffa8b56c67377cf75
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelBuilder
   - hash:
       serializedVersion: 2
       Hash: b3ff64ca2e6c99b7b1bcfb31e95b2ce5
@@ -729,6 +868,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: c5c66fa3251c999324ce79f1b68cbdbf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelBuilderButton
   - hash:
       serializedVersion: 2
       Hash: f6633ace6e530c0000f2ac6da4269c52
@@ -845,7 +990,7 @@ ScriptsOnlyBuild:
     className: GameMenu
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 849cc1bd64ecc4940a03a051ac8dcae9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OriginalLevelSelect
@@ -951,14 +1096,9 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Following
-  - hash:
-      serializedVersion: 2
-      Hash: 20c9a74d659b6895cfdb5f4624ba8daa
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ButtonPop
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/GENERATOR.unity
-  playerPath: /Users/me/CHALLENGE/Test_BUILD_03.apk
+  - Assets/Scenes/LevelBuilder.unity
+  playerPath: /Users/me/CHALLENGE/Test_BUILD_05.apk

@@ -103,7 +103,7 @@
 58-->/Users/me/Documents/GitHub/Surfer-Boy/Surfer Boy Project/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:16:5-101
 59            android:name="unity.build-id"
 59-->/Users/me/Documents/GitHub/Surfer-Boy/Surfer Boy Project/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:16:16-45
-60            android:value="48178868-0971-4d46-9834-a1d083f21954" />
+60            android:value="b29593a9-3837-448f-a221-fa5b1db2aa5e" />
 60-->/Users/me/Documents/GitHub/Surfer-Boy/Surfer Boy Project/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:16:46-98
 61    </application>
 62

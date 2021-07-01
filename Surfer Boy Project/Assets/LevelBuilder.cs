@@ -22,6 +22,10 @@ public class LevelBuilder : MonoBehaviour
 
     Vector3 tilePosition;
 
+    private void Awake() {
+        GameManager.originalMode = false;
+    }
+
     private void Start() {
         player.movementOverhaul = true;
         GameManager.originalMode = false;
