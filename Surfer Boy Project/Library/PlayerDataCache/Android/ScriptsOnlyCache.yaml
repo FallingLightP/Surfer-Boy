@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Box
     - ButtonPop
-    - CompleteLevel
     - DriftParticle
     - GameManager
     - GameMenu
@@ -105,21 +104,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 3638}
+      Script: {instanceID: 3640}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3776}
     - Class: 114
-      Script: {instanceID: 3940}
+      Script: {instanceID: 3942}
     - Class: 114
-      Script: {instanceID: 3978}
+      Script: {instanceID: 3980}
     - Class: 114
-      Script: {instanceID: 4062}
-    - Class: 114
-      Script: {instanceID: 4412}
-    - Class: 114
-      Script: {instanceID: 16954}
+      Script: {instanceID: 4414}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -186,8 +181,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 1918}
-    - Class: 114
       Script: {instanceID: 2028}
     - Class: 114
       Script: {instanceID: 2174}
@@ -200,8 +193,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2516}
-    - Class: 114
       Script: {instanceID: 2580}
     - Class: 114
       Script: {instanceID: 2768}
@@ -210,25 +201,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2902}
     - Class: 114
-      Script: {instanceID: 3160}
-    - Class: 114
       Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 3490}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3638}
+      Script: {instanceID: 3492}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3640}
     - Class: 114
-      Script: {instanceID: 3940}
+      Script: {instanceID: 3942}
     - Class: 114
-      Script: {instanceID: 3978}
+      Script: {instanceID: 3980}
     - Class: 114
-      Script: {instanceID: 4062}
-    - Class: 114
-      Script: {instanceID: 4412}
-    - Class: 114
-      Script: {instanceID: 16954}
+      Script: {instanceID: 4414}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -317,23 +302,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3638}
+      Script: {instanceID: 3122}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3640}
     - Class: 114
-      Script: {instanceID: 3834}
+      Script: {instanceID: 3776}
     - Class: 114
-      Script: {instanceID: 3970}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 3972}
     - Class: 114
-      Script: {instanceID: 4084}
+      Script: {instanceID: 4086}
     - Class: 114
-      Script: {instanceID: 4412}
-    - Class: 114
-      Script: {instanceID: 16954}
-    - Class: 114
-      Script: {instanceID: 34078}
+      Script: {instanceID: 4414}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -465,7 +446,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: a5580c82e9bc41ec73f9916dd3d707fc
+      Hash: 8a0a4e3fec2986d76b79b688384a2ea5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -553,12 +534,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 5395d7fffccf7a8b9ad01775a1ec6c5f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LevelSettings
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -763,6 +738,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HiScoreDisplay
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1011,12 +992,6 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 30a09df9617385a3306c15b6228c78dc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CompleteLevel
-  - hash:
-      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1099,15 +1074,9 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Following
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HiScoreDisplay
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/GENERATOR.unity
   - Assets/Scenes/LevelBuilder.unity
-  playerPath: /Users/me/CHALLENGE/SurferBoy_Release1.apk
+  playerPath: /Users/me/CHALLENGE/SurferBoy_Release1_0.apk

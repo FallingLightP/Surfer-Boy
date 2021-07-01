@@ -46,10 +46,7 @@ public class Goal : MonoBehaviour
                 PlayerPrefs.Save();
             }
         }
-
-        GameManager.initialized = false;
         yield return null;
-        //SceneManager.LoadScene(0);
         part.TriggerSubEmitter(0);
         playerFunction.Win();
 

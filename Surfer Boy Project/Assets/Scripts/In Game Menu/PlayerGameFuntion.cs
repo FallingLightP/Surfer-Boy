@@ -31,7 +31,6 @@ public class PlayerGameFuntion : MonoBehaviour
 
     IEnumerator LOOSE()
     {
-        GameManager.initialized = false;
         player.movementOverhaul = true;
         rig.constraints = RigidbodyConstraints.None;
         rig.AddForce(new Vector3(0.2f,0.75f,-1) * 15f, ForceMode.Impulse);
